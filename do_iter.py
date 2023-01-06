@@ -43,5 +43,33 @@ print(isinstance(123,Iterable))
 
 # 在for循环中同时迭代索引和元素本身：
 # Python内置的enumerate函数可以把一个list变成索引-元素对
+'''
 for i,value in enumerate(['A','B','C']):
 	print(i,value)
+
+for x,y in [(1,1),(2,4),(3,9)]:
+	print(x,y)
+'''
+
+# 请使用迭代查找一个list中最小和最大值，并返回一个tuple
+def findMinAndMax(L):
+	if not L:
+		return None,None
+	a=min(L)
+	b=max(L)
+	return a,b
+
+print(findMinAndMax([]))
+
+# 测试
+if findMinAndMax([]) != (None,None):
+	print('测试失败！')
+elif findMinAndMax([7]) != (7,7):
+	print('测试失败！')
+elif findMinAndMax([7,1]) != (1,7):
+	print('测试失败！')
+elif findMinAndMax([7,1,3,9,5]) != (1,9):
+	print('测试失败！')
+else:
+	print('测试成功！')
+
